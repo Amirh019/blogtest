@@ -37,9 +37,7 @@ export default ((opts: Options) => {
       ></div>
     )
   }
-  giscusScript.setAttribute("data-lang", "fa")
-
   Comments.afterDOMLoaded = script
-
+  giscusScript.setAttribute("data-lang", "fa")
   return Comments
 }) satisfies QuartzComponentConstructor<Options>
