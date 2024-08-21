@@ -59,6 +59,7 @@ document.addEventListener("nav", () => {
   if (theme) {
     giscusScript.setAttribute("data-theme", theme)
   }
+  giscusScript.setAttribute("data-lang", "fa")
 
   giscusContainer.appendChild(giscusScript)
 
