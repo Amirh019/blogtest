@@ -27,7 +27,7 @@ export default ((opts: Options) => {
       return <></>
     }
     return <div class="giscus"></div>
-  } => {
+  } = ({ displayClass, cfg }: QuartzComponentProps) => {
     giscusScript.setAttribute("data-lang", "fa")
     return (
       <div
