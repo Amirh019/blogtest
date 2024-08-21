@@ -235,7 +235,15 @@ a {
   margin-top: 2rem;
   border-top: 1px solid var(--lightgray);
 }
-
+h2#footnote-label{
+  visibility: hidden;
+}
+ 
+h2#footnote-label::after{
+  content: "پانوشت‌ها";
+  visibility: visible;
+  display: block;
+}
 input[type="checkbox"] {
   transform: translateY(2px);
   color: var(--secondary);
