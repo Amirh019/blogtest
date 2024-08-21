@@ -22,8 +22,10 @@ function boolToStringBool(b: boolean): string {
 }
 
 export default ((opts: Options) => {
-    const Comments: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    giscusScript.setAttribute("data-lang", "fa")
+  const Comments: QuartzComponent = ({ displayClass, cfg, fileData }: QuartzComponentProps) => {
+    if (fileData.slug === "index") {
+      return <></>
+    }
     return (
       <div
         class={classNames(displayClass, "giscus")}
@@ -37,11 +39,9 @@ export default ((opts: Options) => {
         data-input-position={opts.options.inputPosition ?? "bottom"}
       ></div>
     )
-      if (fileData.slug === "index") {
-      return <></>
-    }
-    return <div class="giscus"></div>
-}
+  }
+
   Comments.afterDOMLoaded = script
+
   return Comments
 }) satisfies QuartzComponentConstructor<Options>
