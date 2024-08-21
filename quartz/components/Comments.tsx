@@ -22,7 +22,12 @@ function boolToStringBool(b: boolean): string {
 }
 
 export default ((opts: Options) => {
-    const Comments: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
+  const Comments: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+    if (fileData.slug === "index") {
+      return <></>
+    }
+    return <div class="giscus"></div>
+  } => {
     giscusScript.setAttribute("data-lang", "fa")
     return (
       <div
