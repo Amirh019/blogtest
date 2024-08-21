@@ -22,7 +22,8 @@ function boolToStringBool(b: boolean): string {
 }
 
 export default ((opts: Options) => {
-  const Comments: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
+    const Comments: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
+    giscusScript.setAttribute("data-lang", "fa")
     return (
       <div
         class={classNames(displayClass, "giscus")}
@@ -38,6 +39,5 @@ export default ((opts: Options) => {
     )
   }
   Comments.afterDOMLoaded = script
-  giscusScript.setAttribute("data-lang", "fa")
   return Comments
 }) satisfies QuartzComponentConstructor<Options>
