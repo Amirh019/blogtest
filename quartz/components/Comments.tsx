@@ -23,8 +23,7 @@ function boolToStringBool(b: boolean): string {
 
 export default ((opts: Options) => {
     const Comments: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    giscusScript.setAttribute("data-lang", "fa")
-    return (
+        return (
       <div
         class={classNames(displayClass, "giscus")}
         data-repo={opts.options.repo}
